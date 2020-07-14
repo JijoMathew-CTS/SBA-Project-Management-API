@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pms.dao.ProjectDaoImpl;
+import com.pms.dao.IProjectDao;
 import com.pms.entity.Project;
 
 @Service("projectService")
 public class ProjectServiceImpl implements IProjectService {
 	
 	@Autowired
-	private ProjectDaoImpl projectDao;
+	private IProjectDao projectDao;
 
 	@Override
 	public Integer saveOrUpadte(Project project) {

@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pms.entity.User;
-import com.pms.service.UserServiceImpl;
+import com.pms.service.IUserService;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class UserController {
 	
 	@Autowired
-	private UserServiceImpl userService;
+	private IUserService userService;
 	
 	@PostMapping("/user/saveorupdate")
 	public Integer createOrUpdate(@RequestBody User user) {

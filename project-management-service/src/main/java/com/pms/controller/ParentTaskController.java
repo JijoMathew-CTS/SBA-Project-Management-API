@@ -1,4 +1,4 @@
-package com.fse.pm.controller;
+package com.pms.controller;
 
 import java.util.List;
 
@@ -11,16 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fse.pm.pojos.ParentTask;
-import com.fse.pm.service.ParentTaskServiceImpl;
-import com.fse.pm.service.TaskServiceImpl;
+import com.pms.entity.ParentTask;
+import com.pms.service.IParentTaskService;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class ParentTaskController {
 	
 	@Autowired
-	private  ParentTaskServiceImpl parentTaskService;
+	private  IParentTaskService parentTaskService;
 
 	@PostMapping("/parentTask/saveorupdate")
 	public Integer createOrUpdate(@RequestBody ParentTask parentTask) {
@@ -34,7 +33,7 @@ public class ParentTaskController {
 		
 	}
 	
-	@GetMapping("/parentTask/getAllParentTask")
+	@GetMapping("/parentTask/getAllParentTasks")
 	public List<ParentTask> getAllParentTask(){
 		return parentTaskService.view();
 		

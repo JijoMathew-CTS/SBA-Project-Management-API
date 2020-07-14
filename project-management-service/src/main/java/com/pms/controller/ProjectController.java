@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pms.entity.Project;
-import com.pms.service.ProjectServiceImpl;
+import com.pms.service.IProjectService;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class ProjectController {
 	
 	@Autowired
-	private ProjectServiceImpl projectService;
+	private IProjectService projectService;
 	
 	@PostMapping("/project/saveorupdate")
 	public void createOrUpdate(@RequestBody Project project) {
@@ -33,7 +33,7 @@ public class ProjectController {
 		
 	}
 	
-	@GetMapping("/project/view")
+	@GetMapping("/project/getAllProjects")
 	public List<Project> getAllProjects(){
 		return projectService.view();
 		

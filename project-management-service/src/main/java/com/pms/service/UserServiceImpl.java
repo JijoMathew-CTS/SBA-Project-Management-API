@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.pms.dao.UserDaoImpl;
+import com.pms.dao.IUserDao;
 import com.pms.entity.User;
 
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 
 	@Autowired
-	UserDaoImpl userDao;
+	private IUserDao userDao;
 	
 	@Override
 	public Integer saveOrUpadte(User user) {

@@ -1,18 +1,18 @@
-package com.fse.pm.service;
+package com.pms.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fse.pm.dao.ParentTaskDaoImpl;
-import com.fse.pm.pojos.ParentTask;
+import com.pms.dao.IParentTaskDao;
+import com.pms.entity.ParentTask;
 
 @Service("parentTaskService")
 public class ParentTaskServiceImpl implements IParentTaskService {
 	
 	@Autowired
-	ParentTaskDaoImpl parentTaskDao;
+	private IParentTaskDao parentTaskDao;
 
 	@Override
 	public Integer saveOrUpadte(ParentTask parentTask) {

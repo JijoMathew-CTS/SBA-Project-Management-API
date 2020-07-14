@@ -1,8 +1,8 @@
-package com.fse.pm.service;
+package com.pms.service;
 
 import java.util.List;
 
-import com.fse.pm.pojos.ParentTask;
+import com.pms.entity.ParentTask;
 
 public interface IParentTaskService {
 

@@ -1,4 +1,4 @@
-package com.fse.pm.dao;
+package com.pms.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.fse.pm.pojos.Task;
+import com.pms.entity.Task;
 
 @Repository("taskDao")
 public class TaskDaoImpl implements ITaskDao {

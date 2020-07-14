@@ -75,9 +75,7 @@ public class ProjectDaoImpl implements IProjectDao{
 			 
 			Query<Project> query = session.createQuery(createQuery);
 			results = query.getResultList();
-			//Transaction beginTransaction = session.beginTransaction();
-//			project = (Project)session.
-//			beginTransaction.commit();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -88,7 +86,20 @@ public class ProjectDaoImpl implements IProjectDao{
 
 	@Override
 	public Integer delete(Integer id) {
-		// TODO Auto-generated method stub
+		SessionFactory sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
+		Session session=null;
+		try {
+			session=sessionFactory.openSession();
+			Transaction beginTransaction = session.beginTransaction();
+			Project project = (Project)session.get(Project.class, id);
+			session.delete(project);
+			beginTransaction.commit();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
 		return null;
 	}
 

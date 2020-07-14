@@ -1,8 +1,8 @@
-package com.fse.pm.dao;
+package com.pms.dao;
 
 import java.util.List;
 
-import com.fse.pm.pojos.Task;
+import com.pms.entity.Task;
 
 public interface ITaskDao {
 	
